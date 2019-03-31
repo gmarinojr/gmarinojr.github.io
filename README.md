@@ -1,2 +1,2 @@
-# gmarinojr2.github.io
+# gmarinojr.github.io
 My Second Best Website
