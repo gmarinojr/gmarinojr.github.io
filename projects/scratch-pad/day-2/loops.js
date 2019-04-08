@@ -13,8 +13,9 @@
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+  for (var i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -25,9 +26,9 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+    for (var i = array.length-1; i >= 0; i--) {
+      console.log(array[i]);
+    }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -38,8 +39,7 @@ function printArrayValuesInReverse(array) {
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+  return Object.keys(object);
   
   // YOUR CODE ABOVE HERE //
 }
@@ -51,8 +51,9 @@ function getObjectKeys(object) {
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+  for (var key in object) {
+    console.log(key);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -62,9 +63,13 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  var values = [];
+  for (var i in object) {
+    if (object.hasOwnProperty(i)) {
+      values.push(object[i]);
+    }
+  }
+  return values;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -76,8 +81,9 @@ function getObjectValues(object) {
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+  for (var key in object) {
+    console.log(object[key]);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
@@ -88,8 +94,8 @@ function printObjectValues(object) {
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
   
-  
-  
+  var pairs = Object.keys(object);
+  return pairs.length;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -100,9 +106,13 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  var objArray = [];
+  for (var key in object) {
+    objArray.push(object[key]);
+}
+  for (var i = objArray.length-1; i > -1; i--) {
+    console.log(objArray[i]);
+  }
   
   // YOUR CODE ABOVE HERE //
 }
