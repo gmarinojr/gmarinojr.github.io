@@ -13,22 +13,30 @@
 //////////////////////////////////////////////////////////////////////
 
 var animal = {};
-animal.species = "Wolf";
-animal["name"] = "Gray";
+animal.species = "wolf";
+animal["name"] = "gray";
 animal.noises = [];
+console.log(animal);
 
-
-////////////////////////////////;//////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+var noises = [];
+noises[0] = "howl";
+noises.push("growl");
+noises.unshift("bark");
+noises[noises.length] = "whine";
+console.log(noises[noises.length]);
+console.log(noises[noises.length - 1]);
+console.log(noises);
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+animal["noises"] = noises;
+noises.push("Whimper");
 
 /* *******************************************************************
  * Step 4 - Review
@@ -39,6 +47,9 @@ animal.noises = [];
  *
  * *******************************************************************
  */
+
+// 1) bracket notation, dot notation.
+// 2) bracket notation
 
 /* *******************************************************************
  * Step 5 - Take a Break!
@@ -53,13 +64,41 @@ animal.noises = [];
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+var animals = [];
+animals.push(animal);
+console.log(animals);
+var duck = {
+    species: 'duck',
+    name: 'Jerome',
+    noises: ['quack', 'honk', 'sneeze', 'woosh']
+};
+animals.push(duck);
+var dog = {
+    species: 'dog',
+    name: 'Fido',
+    noises: ['bark', 'whimper']
+};
+var cat = {
+    species: 'cat',
+    name: 'Max',
+    noises: ['meow', 'hiss']
+};
+animals.push(dog, cat);
+console.log(animals);
+console.log(animals.length);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+// friends is an array for holding friends.
+var friends = [];
+function getRandom(array) {
+    return Math.floor(Math.random() * array.length);
+}
+var random = getRandom(animals);
+friends.push(animals[random].name);
+animals[0].friends = friends;
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
