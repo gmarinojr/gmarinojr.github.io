@@ -82,8 +82,8 @@ console.log(num); // output 5.
 const temperature = 98;
 console.log(temperature); // outputs 98
 
-temperature = 101;
-console.log(temperature); // outputs 98
+// temperature = 101;
+// console.log(temperature); // outputs 98
 
 // HOISTING //
 
