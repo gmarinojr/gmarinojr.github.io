@@ -45,9 +45,7 @@ function makeContact(id, nameFirst, nameLast) {
 }
 
 function makeContactList(id, nameFirst, nameLast) {
-   
     var contacts = [];
-    
     return {
         length: function() {
             return contacts.length;
@@ -64,30 +62,20 @@ function makeContactList(id, nameFirst, nameLast) {
         },
         removeContact: function(contact) {
             for (var i = 0; i < contacts.length; i++) {
-                if(contacts[i] === contact) {
-                return contacts.splice(i, 1);
+                if (contacts[i] === contact) {
+                    return contacts.splice(i, 1);
                 }
             }
         },
         printAllContactNames: function() {
- /*           //add a printAllContactNames() Function to your makeContactList() factory, so that the 
- *         contact-list returned has an all() API. The printAllContactNames() Function should 
- *         return a String formated with all the full-names of the separated 
- *         with a line-break
- */
             let contactNames = [];
             for (var i = 0; i < contacts.length; i++) {
-              contactNames.push(contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]);
-        
-            } return contactNames.join("\n");
+                contactNames.push(contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]);
+            }
+            return contactNames.join("\n");
         }
     };
-    
 }
-
-
-
-
 
 // YOUR CODE GOES ABOVE HERE //
 
