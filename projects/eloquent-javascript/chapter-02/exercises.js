@@ -3,9 +3,15 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles() {
-  
+function triangles(hashtag) {
 
+  for (var i = 1; i <= hashtag; i++) {
+    var hash = '';
+    for (var j = 0; j < i; j++) {
+      hash += '#';
+    }
+    console.log(hash);
+  }
 }
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
@@ -19,8 +25,33 @@ function fizzBuzz() {
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard() {
-
+function drawChessboard(size) {
+  // make a result string
+  let result = '';
+  // ' # # # #/n# # # # /n'
+  for (let i = 0; i < size; i++) {
+    // concat characters to the string
+    if (i % 2 === 0) {
+      for (let j = 0; j < size; j++) {
+        if (j % 2 === 0) {
+          result += ' ';
+        } else {
+          result += '#';
+        }
+      }
+    } else {
+      for (let j = 0; j < size; j++) {
+        if (j % 2 === 0) {
+          result += '#';
+        } else {
+          result += ' ';
+        }
+      }
+    }
+    result += '\n';
+  }
+  // return result
+  return result;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
