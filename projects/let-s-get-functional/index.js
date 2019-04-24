@@ -3,7 +3,7 @@
 'use strict';
 
 var customers = require('./data/customers.json');
-var _ = require(/* Replace this with the name of your lodown! */);
+var _ = require('lodown-gmarinojr');
 
 /**
  * 1. Import your lodown module using the require() method,
@@ -20,10 +20,23 @@ var _ = require(/* Replace this with the name of your lodown! */);
  */
 
 var maleCount = function(array) {
-
+   let maleArray = [];
+    _.filter(customers, function(i) {
+        if (i.gender == 'male') {
+            maleArray.push(i);
+        }
+    });
+    return maleArray.length;
 };
 
-var femaleCount;
+var femaleCount = function(array) {
+    let females = _.reduce(customers, function(prev, customer) {
+        if (customer.gender == 'female') {
+           return customer++;
+        }
+    }, 0);
+   return females;
+};
 
 var oldestCustomer;
 

@@ -234,7 +234,7 @@ _.filter = function(array, fun) {
 
 _.reject = function(array, fun) {
     let filterArray = [];
-    _.each(array, function(value, index, collection) {
+    _.filter(array, function(value, index, collection) {
         if (!fun(value, index, collection)) {
             filterArray.push(value);
         }
@@ -291,8 +291,7 @@ _.partition = function(array, fun) {
 _.map = function(collection, fun) {
     const mapArray = [];
     _.each(collection, function(element, index, collection) {
-        const mapValues = fun(element, index, collection); 
-            mapArray.push(mapValues);
+            mapArray.push(fun(element, index, collection));
     });
     return mapArray;
 };
@@ -309,10 +308,9 @@ _.map = function(collection, fun) {
 */
 
 _.pluck = function(array, property) {
-    const pluckValues = _.map(array, function(property, key, collection){
+    return _.map(array, function(property, key, collection){
         return property.name;
     });
-    return pluckValues;
 };
 
 /** _.every
@@ -382,8 +380,7 @@ _.some = function(collection, fun) {
     const someArray = [];
     if (fun !== undefined) {
         _.each(collection, function(value, index, collection) {
-            let some = fun(value, index, collection);
-            someArray.push(some);
+            someArray.push(fun(value, index, collection));
         });
         if (someArray.includes(true)) {
             return true;
