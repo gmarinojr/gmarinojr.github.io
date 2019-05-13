@@ -3,12 +3,8 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-    var objVal = [];
-    for (var key in object) {
-        objVal.push(object[key]);
-    }
-    return objVal;
-} 
+    return Object.values(object);
+}
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
@@ -18,7 +14,7 @@ function keysToString(object) {
     var keyStrings = [];
     for (var key in object) {
         keyStrings.push(key);
-    }
+    } 
     return keyStrings.join(' ');
 }
 
@@ -75,10 +71,7 @@ function capitalizeAllWords(string) {
 
 function welcomeMessage(object) {
     // Should take an object with a name property and return 'Welcome <Name>!'
-    if (Object.hasOwnProperty('name')) {
-        var result = object.name;
-        var nameCap = capitalizeWord(result);
-    }
+    var nameCap = capitalizeWord(object.name);
     return 'Welcome ' + nameCap + '!';
 }
 

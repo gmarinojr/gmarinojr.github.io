@@ -36,8 +36,16 @@ while (number <= 20) {
      sum = sum + i;
  }
 
-// We can also count backwards by using (i--).
-// We can also iterate forward (or backwards) with i += number.
+// We can iterate backwards with i - number.
+let backArray = [];
+for (var i=10; i > 0; i-=2) {
+  backArray.push(i);
+}
+// [10, 8, 6, 4, 2]
+
+// We can loop backwards over an array.
+for (var i = backArray.length - 1; i >= 0; i--) {}
+
 
 // If the number of iterations is known, use the For Loop.
 // Use the While Loop if you want to loop until a certain condition is met.

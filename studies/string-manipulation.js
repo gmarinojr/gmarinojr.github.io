@@ -11,7 +11,7 @@ var sir = 'sir!';
 console.log(good + day + sir); // prints good day sir!
 
 good += (day + sir);
-console.log(good) // prints good day sir!
+console.log(good); // prints good day sir!
 
 var a = 'Agent' + ' ' + 27;
 console.log(a); // prints Agent 27
@@ -48,7 +48,8 @@ console.log(sentence2.replace(regex1, 'easy')); // prints Performing the replace
 
 // .slice()
 
-// .startsWith()
+     
+// .startsWith()        
 
 // .toLowerCase()
 

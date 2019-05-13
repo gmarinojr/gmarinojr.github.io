@@ -18,7 +18,12 @@ function triangles(hashtag) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
-  
+  for (let n = 1; n <= 15; n++) {
+    let output = "";
+    if (n % 3 == 0) output += "fizz";
+    if (n % 5 == 0) output += "buzz";
+    console.log(output || n);
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -26,32 +31,19 @@ function fizzBuzz() {
 ////////////////////////////////////////////////////////////////////////////////
 
 function drawChessboard(size) {
-  // make a result string
-  let result = '';
-  // ' # # # #/n# # # # /n'
-  for (let i = 0; i < size; i++) {
-    // concat characters to the string
-    if (i % 2 === 0) {
-      for (let j = 0; j < size; j++) {
-        if (j % 2 === 0) {
-          result += ' ';
-        } else {
-          result += '#';
-        }
+  let board = "";
+  for (let y = 0; y < size; y++) {
+    for (let x = 0; x < size; x++) {
+      if ((x + y) % 2 == 0) {
+        board += " ";
       }
-    } else {
-      for (let j = 0; j < size; j++) {
-        if (j % 2 === 0) {
-          result += '#';
-        } else {
-          result += ' ';
-        }
+      else {
+        board += "#";
       }
     }
-    result += '\n';
+    board += "\n";
   }
-  // return result
-  return result;
+  console.log(board);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
